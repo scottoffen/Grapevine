@@ -196,7 +196,7 @@ namespace Grapevine
         public static IEnumerable<Type> GetQualifiedTypes(Assembly assembly)
         {
             foreach (var type in assembly.GetTypes()
-                .Where(t => t.IsClass && t.IsDefined(typeof(RestResourceAttribute), false))
+                .Where(t => t.IsClass && t.IsDefined(typeof(RestResourceAttribute), true))
                 .OrderBy(t => t.Name)) yield return type;
         }
 
